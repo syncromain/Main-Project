@@ -32,6 +32,13 @@ Public Class frmlogin
         End If
     End Sub
 
+    Private Sub reset_form()
+        lblwarning.Text = "Please Sign....."
+        txtusername.Text = ""
+        txtpassword.Text = ""
+
+    End Sub
+
     Private Sub BorderPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles pnl_border.MouseDown
         If e.Button = MouseButtons.Left Then
             MoveForm = True
@@ -147,10 +154,14 @@ Public Class frmlogin
         If txtusername.Text = "" Then
             lblwarning.ForeColor = System.Drawing.Color.Red
             lblwarning.Text += "Please enter username." + Environment.NewLine
+            txtusername.BorderColor = System.Drawing.Color.Red
+            txtusername.BorderThickness = 2
         End If
         If txtpassword.Text = "" Then
             lblwarning.ForeColor = System.Drawing.Color.Red
             lblwarning.Text += "Please enter password." + Environment.NewLine
+            txtpassword.BorderColor = System.Drawing.Color.Red
+            txtpassword.BorderThickness = 2
         End If
         If lblwarning.Text = "" Then
             userLC = txtusername.Text.ToLowerInvariant
@@ -229,12 +240,6 @@ Public Class frmlogin
         frmregistration.ShowDialog(Me)
     End Sub
 
-    Private Sub txtpassword_TextChanged(sender As Object, e As EventArgs) Handles txtpassword.TextChanged
-        If txtpassword.Text = "" Then
-            Showpwd = True
-        End If
-    End Sub
-
     Private Sub cbremember_CheckedChanged(sender As Object, e As EventArgs)
         If tgremember.Checked = False Then
             My.MySettings.Default.Username = Nothing
@@ -244,26 +249,24 @@ Public Class frmlogin
         End If
     End Sub
 
-    Private Sub reset_form()
-        lblwarning.Text = "Please Sign....."
-        txtusername.Text = ""
-        txtpassword.Text = ""
-    End Sub
-
     Private Sub close_sub()
         If pnl_login.Enabled = True Then
+            btnlog.Checked = False
             reset_form()
             pnl_login.Visible = False
             pnl_login.Enabled = False
         ElseIf pnl_contact.Enabled = True Then
+            btncontact.Checked = False
             lblcontact1.Text = ""
             lblemail1.Text = ""
             pnl_contact.Visible = False
             pnl_contact.Enabled = False
         ElseIf pnl_terms.Enabled = True Then
+            btnterms.Checked = False
             pnl_terms.Visible = False
             pnl_terms.Enabled = False
         ElseIf pnl_help.Enabled = True Then
+            btnhelp.Checked = False
             pnl_help.Visible = False
             pnl_help.Enabled = False
             lbltitle1.Visible = True
@@ -271,12 +274,14 @@ Public Class frmlogin
             lbltitle3.Visible = True
             pblogo.Visible = True
         ElseIf pnl_about.Enabled = True Then
+            btnabout.Checked = False
             pnl_about.Visible = False
             pnl_about.Enabled = False
         End If
     End Sub
 
     Private Sub btnhelp_Click(sender As Object, e As EventArgs) Handles btnhelp.Click
+        btnhelp.Checked = True
         If pnl_help.Enabled = False Then
             close_sub()
             pnl_help.Enabled = True
@@ -289,6 +294,7 @@ Public Class frmlogin
     End Sub
 
     Private Sub btnterms_Click(sender As Object, e As EventArgs) Handles btnterms.Click
+        btnterms.Checked = True
         If pnl_terms.Enabled = False Then
             close_sub()
             pnl_terms.Enabled = True
@@ -297,6 +303,7 @@ Public Class frmlogin
     End Sub
 
     Private Sub btnlog_Click(sender As Object, e As EventArgs) Handles btnlog.Click
+        btnlog.Checked = True
         If pnl_login.Enabled = False Then
             close_sub()
             pnl_login.Enabled = True
@@ -305,6 +312,7 @@ Public Class frmlogin
     End Sub
 
     Private Sub btnabout_Click(sender As Object, e As EventArgs) Handles btnabout.Click
+        btnabout.Checked = True
         If pnl_about.Enabled = False Then
             close_sub()
             pnl_about.Enabled = True
@@ -313,6 +321,7 @@ Public Class frmlogin
     End Sub
 
     Private Sub btncontact_Click(sender As Object, e As EventArgs) Handles btncontact.Click
+        btncontact.Checked = True
         If pnl_contact.Enabled = False Then
             close_sub()
             pnl_contact.Enabled = True
@@ -348,10 +357,30 @@ Public Class frmlogin
         End If
     End Sub
 
-    Private Sub txtusername_TextChanged(sender As Object, e As EventArgs) Handles txtusername.TextChanged, txtpassword.TextChanged
+    Private Sub txt_TextChanged(sender As Object, e As EventArgs) Handles txtusername.TextChanged, txtpassword.TextChanged
         If lblwarning.ForeColor = System.Drawing.Color.Red Then
             lblwarning.ForeColor = System.Drawing.Color.WhiteSmoke
             lblwarning.Text = "Please Sign....."
         End If
+    End Sub
+
+    Private Sub txtpassword_TextChanged(sender As Object, e As EventArgs) Handles txtpassword.TextChanged
+        If txtpassword.Text = "" Then
+            Showpwd = True
+        ElseIf txtpassword.BorderThickness = 2 Then
+            txtpassword.BorderColor = System.Drawing.Color.WhiteSmoke
+            txtpassword.BorderThickness = 1
+        End If
+    End Sub
+
+    Private Sub txtusername_TextChanged(sender As Object, e As EventArgs) Handles txtusername.TextChanged
+        If txtusername.BorderThickness = 2 And txtusername.Text IsNot "" Then
+            txtusername.BorderColor = System.Drawing.Color.WhiteSmoke
+            txtusername.BorderThickness = 1
+        End If
+    End Sub
+
+    Private Sub lblforgot_Click(sender As Object, e As EventArgs) Handles lblforgot.Click
+        MsgBox("Contact your admin and they are the one who will be able to reset your account in Account Control Panel.")
     End Sub
 End Class
