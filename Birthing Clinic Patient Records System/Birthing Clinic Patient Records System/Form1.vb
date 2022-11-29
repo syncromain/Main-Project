@@ -325,6 +325,7 @@ Public Class frmlogin
             Do While dr.Read()
                 lblcontact1.Text += ((dr("contact").ToString) + Environment.NewLine)
                 lblemail1.Text += (dr("email") + Environment.NewLine)
+
             Loop
             dr.Close()
             cn.Close()
