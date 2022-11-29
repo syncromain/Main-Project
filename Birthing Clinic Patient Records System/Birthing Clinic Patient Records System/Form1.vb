@@ -183,6 +183,7 @@ Public Class frmlogin
                         My.MySettings.Default.RememberMe = True
                         My.MySettings.Default.Save()
                     End If
+                    reset_form()
                     Me.Visible = False
                     frmmain.ShowDialog(Me)
                     Me.Close()
