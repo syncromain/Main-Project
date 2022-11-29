@@ -136,6 +136,7 @@ Partial Class frmlogin
         '
         'btnlogin
         '
+        Me.btnlogin.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnlogin.Animated = True
         Me.btnlogin.BackColor = System.Drawing.Color.Transparent
         Me.btnlogin.BorderColor = System.Drawing.Color.Transparent
@@ -164,6 +165,8 @@ Partial Class frmlogin
         '
         'txtpassword
         '
+        Me.txtpassword.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtpassword.Animated = True
         Me.txtpassword.AutoRoundedCorners = True
         Me.txtpassword.BackColor = System.Drawing.Color.Transparent
         Me.txtpassword.BorderColor = System.Drawing.Color.WhiteSmoke
@@ -203,6 +206,8 @@ Partial Class frmlogin
         '
         'txtusername
         '
+        Me.txtusername.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.txtusername.Animated = True
         Me.txtusername.AutoRoundedCorners = True
         Me.txtusername.BackColor = System.Drawing.Color.Transparent
         Me.txtusername.BorderColor = System.Drawing.Color.WhiteSmoke
@@ -239,6 +244,7 @@ Partial Class frmlogin
         '
         'lblcreate
         '
+        Me.lblcreate.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblcreate.AutoSize = True
         Me.lblcreate.BackColor = System.Drawing.Color.Transparent
         Me.lblcreate.Cursor = System.Windows.Forms.Cursors.Hand
@@ -254,6 +260,7 @@ Partial Class frmlogin
         '
         'lblforgot
         '
+        Me.lblforgot.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblforgot.AutoSize = True
         Me.lblforgot.BackColor = System.Drawing.Color.Transparent
         Me.lblforgot.Cursor = System.Windows.Forms.Cursors.Hand
@@ -287,6 +294,8 @@ Partial Class frmlogin
         Me.btncontact.BorderColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btncontact.BorderRadius = 15
         Me.btncontact.BorderThickness = 1
+        Me.btncontact.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btncontact.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btncontact.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btncontact.CustomizableEdges.BottomLeft = False
         Me.btncontact.CustomizableEdges.BottomRight = False
@@ -316,6 +325,8 @@ Partial Class frmlogin
         Me.btnabout.BorderColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnabout.BorderRadius = 15
         Me.btnabout.BorderThickness = 1
+        Me.btnabout.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnabout.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnabout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnabout.CustomizableEdges.BottomLeft = False
         Me.btnabout.CustomizableEdges.BottomRight = False
@@ -346,6 +357,9 @@ Partial Class frmlogin
         Me.btnlog.BorderColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnlog.BorderRadius = 15
         Me.btnlog.BorderThickness = 1
+        Me.btnlog.Checked = True
+        Me.btnlog.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnlog.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnlog.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnlog.CustomizableEdges.BottomLeft = False
         Me.btnlog.CustomizableEdges.BottomRight = False
@@ -376,6 +390,8 @@ Partial Class frmlogin
         Me.btnterms.BorderColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnterms.BorderRadius = 15
         Me.btnterms.BorderThickness = 1
+        Me.btnterms.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnterms.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnterms.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnterms.CustomizableEdges.BottomLeft = False
         Me.btnterms.CustomizableEdges.BottomRight = False
@@ -406,6 +422,8 @@ Partial Class frmlogin
         Me.btnhelp.BorderColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnhelp.BorderRadius = 15
         Me.btnhelp.BorderThickness = 1
+        Me.btnhelp.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnhelp.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnhelp.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnhelp.CustomizableEdges.BottomLeft = False
         Me.btnhelp.CustomizableEdges.BottomRight = False
@@ -502,6 +520,7 @@ Partial Class frmlogin
         '
         'lblRemember
         '
+        Me.lblRemember.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblRemember.AutoSize = True
         Me.lblRemember.BackColor = System.Drawing.Color.Transparent
         Me.lblRemember.Cursor = System.Windows.Forms.Cursors.Hand
@@ -517,6 +536,7 @@ Partial Class frmlogin
         '
         'tgremember
         '
+        Me.tgremember.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.tgremember.Animated = True
         Me.tgremember.BackColor = System.Drawing.Color.Transparent
         Me.tgremember.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -536,7 +556,6 @@ Partial Class frmlogin
         '
         'lblwarning
         '
-        Me.lblwarning.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblwarning.AutoEllipsis = True
         Me.lblwarning.BackColor = System.Drawing.Color.Transparent
         Me.lblwarning.Cursor = System.Windows.Forms.Cursors.Default
