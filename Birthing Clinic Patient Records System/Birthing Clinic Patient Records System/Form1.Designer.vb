@@ -46,7 +46,6 @@ Partial Class frmlogin
         Me.lblRemember = New System.Windows.Forms.Label()
         Me.tgremember = New Guna.UI2.WinForms.Guna2ToggleSwitch()
         Me.lblwarning = New System.Windows.Forms.Label()
-        Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.lblcontact1 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -67,6 +66,7 @@ Partial Class frmlogin
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Guna2AnimateWindow1 = New Guna.UI2.WinForms.Guna2AnimateWindow(Me.components)
         Me.pnl_border.SuspendLayout()
         Me.pnl_navbutton.SuspendLayout()
         CType(Me.pblogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -570,16 +570,6 @@ Partial Class frmlogin
         Me.lblwarning.Text = "Please Sign....."
         Me.lblwarning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Guna2BorderlessForm1
-        '
-        Me.Guna2BorderlessForm1.AnimateWindow = True
-        Me.Guna2BorderlessForm1.BorderRadius = 10
-        Me.Guna2BorderlessForm1.ContainerControl = Me
-        Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
-        Me.Guna2BorderlessForm1.DragForm = False
-        Me.Guna2BorderlessForm1.ResizeForm = False
-        Me.Guna2BorderlessForm1.TransparentWhileDrag = True
-        '
         'lblcontact1
         '
         Me.lblcontact1.AutoSize = True
@@ -739,7 +729,7 @@ Partial Class frmlogin
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label12.Location = New System.Drawing.Point(210, 20)
+        Me.Label12.Location = New System.Drawing.Point(218, 17)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(61, 25)
@@ -753,7 +743,7 @@ Partial Class frmlogin
         Me.pnl_help.Controls.Add(Me.Label9)
         Me.pnl_help.Controls.Add(Me.Guna2Panel3)
         Me.pnl_help.Enabled = False
-        Me.pnl_help.Location = New System.Drawing.Point(31, 31)
+        Me.pnl_help.Location = New System.Drawing.Point(29, 129)
         Me.pnl_help.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_help.Name = "pnl_help"
         Me.pnl_help.Size = New System.Drawing.Size(492, 357)
@@ -769,7 +759,7 @@ Partial Class frmlogin
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label9.Location = New System.Drawing.Point(167, 21)
+        Me.Label9.Location = New System.Drawing.Point(183, 30)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(135, 25)
@@ -848,12 +838,18 @@ Partial Class frmlogin
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(210, 20)
+        Me.Label2.Location = New System.Drawing.Point(218, 15)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 25)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "About"
+        '
+        'Guna2AnimateWindow1
+        '
+        Me.Guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND
+        Me.Guna2AnimateWindow1.Interval = 300
+        Me.Guna2AnimateWindow1.TargetForm = Me
         '
         'frmlogin
         '
@@ -866,13 +862,13 @@ Partial Class frmlogin
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.btnclose
         Me.ClientSize = New System.Drawing.Size(564, 437)
+        Me.Controls.Add(Me.pnl_navbutton)
+        Me.Controls.Add(Me.pnl_border)
+        Me.Controls.Add(Me.pnl_login)
         Me.Controls.Add(Me.lbltitle3)
         Me.Controls.Add(Me.lbltitle2)
         Me.Controls.Add(Me.lbltitle1)
         Me.Controls.Add(Me.pblogo)
-        Me.Controls.Add(Me.pnl_navbutton)
-        Me.Controls.Add(Me.pnl_border)
-        Me.Controls.Add(Me.pnl_login)
         Me.Controls.Add(Me.pnl_terms)
         Me.Controls.Add(Me.pnl_help)
         Me.Controls.Add(Me.pnl_about)
@@ -932,7 +928,6 @@ Partial Class frmlogin
     Friend WithEvents btncontact As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnabout As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnlog As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
     Friend WithEvents tgremember As Guna.UI2.WinForms.Guna2ToggleSwitch
     Friend WithEvents lblRemember As Label
     Friend WithEvents pnl_contact As Panel
@@ -956,4 +951,5 @@ Partial Class frmlogin
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lblwarning As Label
+    Friend WithEvents Guna2AnimateWindow1 As Guna.UI2.WinForms.Guna2AnimateWindow
 End Class
