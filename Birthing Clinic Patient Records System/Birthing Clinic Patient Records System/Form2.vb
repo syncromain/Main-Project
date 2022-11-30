@@ -60,6 +60,7 @@ Public Class frmregistration
         Return txt
     End Function
 
+
     Private Sub txtlastname_MouseDown(sender As Object, e As MouseEventArgs) Handles txtlastname.MouseDown
         mouse_down(txtlastname)
     End Sub

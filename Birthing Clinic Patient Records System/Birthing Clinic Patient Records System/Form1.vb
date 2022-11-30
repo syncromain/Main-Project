@@ -33,10 +33,9 @@ Public Class frmlogin
     End Sub
 
     Private Sub reset_form()
-        lblwarning.Text = "Please Sign....."
-        txtusername.Text = ""
-        txtpassword.Text = ""
-
+        txtusername.Text = My.MySettings.Default.Username
+        txtpassword.Text = My.MySettings.Default.Password
+        tgremember.Checked = My.MySettings.Default.RememberMe
     End Sub
 
     Private Sub BorderPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles pnl_border.MouseDown
@@ -286,10 +285,6 @@ Public Class frmlogin
             close_sub()
             pnl_help.Enabled = True
             pnl_help.Visible = True
-            lbltitle1.Visible = False
-            lbltitle2.Visible = False
-            lbltitle3.Visible = False
-            pblogo.Visible = False
         End If
     End Sub
 

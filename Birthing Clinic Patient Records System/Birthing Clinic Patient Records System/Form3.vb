@@ -1,4 +1,6 @@
 ﻿Imports System.Runtime.CompilerServices
+Imports System.Data.OleDb
+Imports Guna.UI2.WinForms
 
 Public Class frmmain
     Dim newFont As New Font("Segoe UI", 9.2, FontStyle.Underline)
@@ -8,6 +10,20 @@ Public Class frmmain
     Private Property MoveForm As Boolean
 
     Private Property MoveForm_MousePosition As Point
+
+    Private Sub PopListView()
+        dgv_records.Rows.Clear()
+        openCon()
+        sql = "Select * from tbl_patientrecords order by patient_id"
+        cmd = New OleDb.OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader()
+
+        Do While dr.Read() = True
+            dgv_records.Rows.Add(dr.Item("patient_id").ToString, dr.Item("lastname").ToString, dr.Item("firstname").ToString, dr.Item("mi").ToString)
+        Loop
+        dr.Close()
+        cn.Close()
+    End Sub
 
     Private Sub BorderPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles pnl_border.MouseDown
 
@@ -153,15 +169,39 @@ Public Class frmmain
         End If
     End Sub
 
-    Private Sub sc_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles sc.Panel2.Paint
-
-    End Sub
-
-    Private Sub btnsetting_Click(sender As Object, e As EventArgs) Handles btnsetting.Click
-
+    Private Sub close_sub()
+        If pnl_home.Enabled = True Then
+            btnhome.Checked = False
+            pnl_home.Visible = False
+            pnl_home.Enabled = False
+        ElseIf pnl_records.Enabled = True Then
+            btnrecords.Checked = False
+            pnl_records.Visible = False
+            pnl_records.Enabled = False
+        End If
     End Sub
 
     Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
+        Me.Close()
+        Application.Restart()
+    End Sub
 
+    Private Sub btnrecords_Click(sender As Object, e As EventArgs) Handles btnrecords.Click
+        btnrecords.Checked = True
+        If pnl_records.Enabled = False Then
+            close_sub()
+            pnl_records.Enabled = True
+            pnl_records.Visible = True
+            PopListView()
+        End If
+    End Sub
+
+    Private Sub btnhome_Click(sender As Object, e As EventArgs) Handles btnhome.Click
+        btnhome.Checked = True
+        If pnl_home.Enabled = False Then
+            close_sub()
+            pnl_home.Enabled = True
+            pnl_home.Visible = True
+        End If
     End Sub
 End Class
