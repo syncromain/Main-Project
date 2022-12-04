@@ -335,6 +335,7 @@ Partial Class frmregistration
         Me.cbusertype.Location = New System.Drawing.Point(23, 195)
         Me.cbusertype.Name = "cbusertype"
         Me.cbusertype.Size = New System.Drawing.Size(324, 30)
+        Me.cbusertype.StartIndex = 0
         Me.cbusertype.TabIndex = 5
         Me.cbusertype.TextOffset = New System.Drawing.Point(30, 0)
         '

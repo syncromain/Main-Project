@@ -64,8 +64,7 @@ Public Class frmlogin
             Me.Opacity = disappear
             System.Threading.Thread.Sleep(50)
         Next
-        Me.Opacity = 1.0
-        Me.Close()
+        Application.Exit()
     End Sub
 
     Private Sub btnminimize_Click(sender As Object, e As EventArgs) Handles btnminimize.Click

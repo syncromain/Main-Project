@@ -268,6 +268,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\magnifier.png" />
     <None Include="Resources\iconslideshow1.png" />
     <None Include="Resources\iconslidehide1.png" />
     <None Include="Resources\iconlogout.png" />

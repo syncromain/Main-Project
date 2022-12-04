@@ -6,6 +6,7 @@ Public Class frmmain
     Dim newFont As New Font("Segoe UI", 9.2, FontStyle.Underline)
     Dim newFont2 As New Font("Segoe UI", 9.2)
     Dim hided = False
+    Dim pop As Boolean
 
     Private Property MoveForm As Boolean
 
@@ -53,8 +54,7 @@ Public Class frmmain
             Me.Opacity = disapper
             System.Threading.Thread.Sleep(50)
         Next
-        Me.Opacity = 1.0!
-        Me.Close()
+        Application.Exit()
     End Sub
 
     Private Sub btnminimize_Click(sender As Object, e As EventArgs) Handles btnminimize.Click
@@ -190,8 +190,12 @@ Public Class frmmain
         btnrecords.Checked = True
         If pnl_records.Enabled = False Then
             close_sub()
+            btnadd.BackColor = System.Drawing.Color.Green
+            btnslidepanel.BackColor = System.Drawing.Color.Green
             pnl_records.Enabled = True
             pnl_records.Visible = True
+            txtsearch.Enabled = True
+            txtsearch.Visible = True
             PopListView()
         End If
     End Sub
@@ -200,8 +204,72 @@ Public Class frmmain
         btnhome.Checked = True
         If pnl_home.Enabled = False Then
             close_sub()
+            btnadd.BackColor = System.Drawing.Color.Transparent
+            btnslidepanel.BackColor = System.Drawing.Color.Transparent
             pnl_home.Enabled = True
             pnl_home.Visible = True
+        End If
+    End Sub
+
+    Private Sub btnadd_Click(sender As Object, e As EventArgs) Handles btnadd.Click
+        Me.Visible = False
+        frmaddpatient.ShowDialog(Me)
+    End Sub
+
+    Private Sub search()
+        Dim check As Boolean
+
+        openCon()
+        sql = "Select * from tbl_patientrecords where lastname like '%" & txtsearch.Text & "%'"
+        cmd = New OleDb.OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader()
+        dgv_records.Rows.Clear()
+
+        Do While dr.Read() = True
+            dgv_records.Rows.Add(dr.Item("patient_id").ToString, dr.Item("lastname").ToString, dr.Item("firstname").ToString, dr.Item("mi").ToString)
+        Loop
+
+        sql = "Select * from tbl_patientrecords where firstname like '%" & txtsearch.Text & "%'"
+        cmd = New OleDb.OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader()
+
+        Do While dr.Read() = True
+            For Each row In dgv_records.Rows
+                If row.Cells("Column1").Value = dr.Item("patient_id").ToString Then
+                    check = True
+                    Exit For
+                End If
+            Next
+            If check = False Then
+                dgv_records.Rows.Add(dr.Item("patient_id").ToString, dr.Item("lastname").ToString, dr.Item("firstname").ToString, dr.Item("mi").ToString)
+            End If
+        Loop
+
+        sql = "Select * from tbl_patientrecords where patient_id like '%" & txtsearch.Text & "%'"
+        cmd = New OleDb.OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader()
+
+        Do While dr.Read() = True
+            For Each row In dgv_records.Rows
+                If row.Cells("Column1").Value = dr.Item("patient_id").ToString Then
+                    check = True
+                    Exit For
+                End If
+            Next
+            If check = False Then
+                dgv_records.Rows.Add(dr.Item("patient_id").ToString, dr.Item("lastname").ToString, dr.Item("firstname").ToString, dr.Item("mi").ToString)
+            End If
+        Loop
+        dr.Close()
+        cn.Close()
+    End Sub
+
+    Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtsearch.TextChanged
+        If txtsearch.Text = "" And pop = True Then
+            PopListView()
+        ElseIf txtsearch.Text IsNot "" Then
+            search()
+            pop = True
         End If
     End Sub
 End Class

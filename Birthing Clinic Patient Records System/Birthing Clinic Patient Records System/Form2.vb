@@ -25,7 +25,6 @@ Public Class frmregistration
             Me.Opacity = disappear
             System.Threading.Thread.Sleep(50)
         Next
-        Me.Opacity = 1.0
         Me.Close()
         frmlogin.Opacity = 1.0
         frmlogin.Enabled = True
@@ -44,15 +43,7 @@ Public Class frmregistration
         frmlogin.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Function cbx_click(cbx As Guna2ComboBox)
-        If cbx.BorderColor = System.Drawing.Color.Red Then
-            cbx.BorderColor = System.Drawing.Color.WhiteSmoke
-            cbx.BorderThickness = 1
-        End If
-        Return cbx
-    End Function
-
-    Private Function mouse_down(txt As Guna2TextBox)
+    Private Function ctextchanged(txt As Guna2ComboBox)
         If txt.BorderColor = System.Drawing.Color.Red Then
             txt.BorderColor = System.Drawing.Color.WhiteSmoke
             txt.BorderThickness = 1
@@ -60,53 +51,36 @@ Public Class frmregistration
         Return txt
     End Function
 
+    Private Function txtchanged(txt As Guna2TextBox)
+        If txt.BorderColor = System.Drawing.Color.Red Then
+            txt.BorderColor = System.Drawing.Color.WhiteSmoke
+            txt.BorderThickness = 1
+        End If
+        Return txt
+    End Function
 
-    Private Sub txtlastname_MouseDown(sender As Object, e As MouseEventArgs) Handles txtlastname.MouseDown
-        mouse_down(txtlastname)
+    Private Sub txtlastname_MouseDown(sender As Object, e As EventArgs) Handles txtlastname.TextChanged
+        txtchanged(txtlastname)
     End Sub
 
-    Private Sub txtfirstname_MouseDown(sender As Object, e As MouseEventArgs) Handles txtfirstname.MouseDown
-        mouse_down(txtfirstname)
+    Private Sub txtfirstname_MouseDown(sender As Object, e As EventArgs) Handles txtfirstname.TextChanged
+        txtchanged(txtfirstname)
     End Sub
 
-    Private Sub txtusername_MouseDown(sender As Object, e As MouseEventArgs) Handles txtusername.MouseDown
-        mouse_down(txtusername)
+    Private Sub txtusername_MouseDown(sender As Object, e As EventArgs) Handles txtusername.TextChanged
+        txtchanged(txtusername)
     End Sub
 
-    Private Sub txtnewpassword_MouseDown(sender As Object, e As MouseEventArgs) Handles txtnewpassword.MouseDown
-        mouse_down(txtnewpassword)
+    Private Sub txtnewpassword_MouseDown(sender As Object, e As EventArgs) Handles txtnewpassword.TextChanged
+        txtchanged(txtnewpassword)
     End Sub
 
-    Private Sub txtconfirmpassword_MouseDown(sender As Object, e As MouseEventArgs) Handles txtconfirmpassword.MouseDown
-        mouse_down(txtconfirmpassword)
+    Private Sub txtconfirmpassword_MouseDown(sender As Object, e As EventArgs) Handles txtconfirmpassword.TextChanged
+        txtchanged(txtconfirmpassword)
     End Sub
 
-    Private Sub cbusertype_Click(sender As Object, e As MouseEventArgs) Handles cbusertype.Click
-        cbx_click(cbusertype)
-    End Sub
-
-    Private Sub txtlastname_Enter(sender As Object, e As EventArgs) Handles txtlastname.Enter
-        mouse_down(txtlastname)
-    End Sub
-
-    Private Sub txtfirstname_Enter(sender As Object, e As EventArgs) Handles txtfirstname.Enter
-        mouse_down(txtfirstname)
-    End Sub
-
-    Private Sub txtusername_Enter(sender As Object, e As EventArgs) Handles txtusername.Enter
-        mouse_down(txtusername)
-    End Sub
-
-    Private Sub txtnewpassword_Enter(sender As Object, e As EventArgs) Handles txtnewpassword.Enter
-        mouse_down(txtnewpassword)
-    End Sub
-
-    Private Sub txtconfirmpassword_Enter(sender As Object, e As EventArgs) Handles txtconfirmpassword.Enter
-        mouse_down(txtconfirmpassword)
-    End Sub
-
-    Private Sub cbusertype_Enter(sender As Object, e As EventArgs) Handles cbusertype.Enter
-        cbx_click(cbusertype)
+    Private Sub cbusertype_MouseDown(sender As Object, e As EventArgs) Handles cbusertype.Click, cbusertype.Enter
+        ctextchanged(cbusertype)
     End Sub
 
     Private Sub lblsignin_Click(sender As Object, e As EventArgs) Handles lblsignin.Click
