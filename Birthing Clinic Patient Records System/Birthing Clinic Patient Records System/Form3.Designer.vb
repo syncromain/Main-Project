@@ -24,11 +24,11 @@ Partial Class frmmain
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmmain))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnl_border = New System.Windows.Forms.Panel()
         Me.btnminimize = New System.Windows.Forms.Button()
         Me.btnclose = New System.Windows.Forms.Button()
@@ -43,13 +43,15 @@ Partial Class frmmain
         Me.btnnotifi = New Guna.UI2.WinForms.Guna2Button()
         Me.btnrecords = New Guna.UI2.WinForms.Guna2Button()
         Me.btnhome = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnslidepanel = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnadd = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_records = New Guna.UI2.WinForms.Guna2Panel()
+        Me.txtsearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.dgv_records = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnslidepanel = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_home = New Guna.UI2.WinForms.Guna2Panel()
         Me.hr = New Guna.UI2.WinForms.Guna2Shapes()
         Me.pnl_title = New Guna.UI2.WinForms.Guna2Panel()
@@ -147,8 +149,9 @@ Partial Class frmmain
         'sc.Panel2
         '
         Me.sc.Panel2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sc.Panel2.Controls.Add(Me.pnl_records)
         Me.sc.Panel2.Controls.Add(Me.btnslidepanel)
+        Me.sc.Panel2.Controls.Add(Me.btnadd)
+        Me.sc.Panel2.Controls.Add(Me.pnl_records)
         Me.sc.Panel2.Controls.Add(Me.pnl_home)
         Me.sc.Size = New System.Drawing.Size(800, 431)
         Me.sc.SplitterDistance = 120
@@ -352,7 +355,6 @@ Partial Class frmmain
         Me.btnrecords.BackColor = System.Drawing.Color.Transparent
         Me.btnrecords.BorderColor = System.Drawing.Color.DarkGreen
         Me.btnrecords.BorderThickness = 1
-        Me.btnrecords.Checked = True
         Me.btnrecords.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnrecords.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnrecords.Cursor = System.Windows.Forms.Cursors.Hand
@@ -400,8 +402,61 @@ Partial Class frmmain
         Me.btnhome.TabIndex = 0
         Me.btnhome.Text = "Home"
         '
+        'btnslidepanel
+        '
+        Me.btnslidepanel.Animated = True
+        Me.btnslidepanel.BackColor = System.Drawing.Color.Transparent
+        Me.btnslidepanel.BorderColor = System.Drawing.Color.DarkGreen
+        Me.btnslidepanel.BorderRadius = 2
+        Me.btnslidepanel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnslidepanel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnslidepanel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnslidepanel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnslidepanel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnslidepanel.FillColor = System.Drawing.Color.DarkGreen
+        Me.btnslidepanel.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnslidepanel.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnslidepanel.HoverState.FillColor = System.Drawing.Color.DarkGreen
+        Me.btnslidepanel.Image = Global.Birthing_Clinic_Patient_Records_System.My.Resources.Resources.iconslidehide
+        Me.btnslidepanel.ImageOffset = New System.Drawing.Point(7, 0)
+        Me.btnslidepanel.ImageSize = New System.Drawing.Size(15, 15)
+        Me.btnslidepanel.Location = New System.Drawing.Point(-28, 0)
+        Me.btnslidepanel.Name = "btnslidepanel"
+        Me.btnslidepanel.ShadowDecoration.BorderRadius = 10
+        Me.btnslidepanel.ShadowDecoration.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnslidepanel.ShadowDecoration.Enabled = True
+        Me.btnslidepanel.Size = New System.Drawing.Size(52, 33)
+        Me.btnslidepanel.TabIndex = 21
+        '
+        'btnadd
+        '
+        Me.btnadd.Animated = True
+        Me.btnadd.BackColor = System.Drawing.Color.Transparent
+        Me.btnadd.BorderColor = System.Drawing.Color.DarkGreen
+        Me.btnadd.BorderRadius = 10
+        Me.btnadd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnadd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnadd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnadd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnadd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnadd.FillColor = System.Drawing.Color.DarkGreen
+        Me.btnadd.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnadd.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnadd.HoverState.FillColor = System.Drawing.Color.DarkGreen
+        Me.btnadd.ImageOffset = New System.Drawing.Point(7, 0)
+        Me.btnadd.ImageSize = New System.Drawing.Size(15, 15)
+        Me.btnadd.Location = New System.Drawing.Point(477, 386)
+        Me.btnadd.Name = "btnadd"
+        Me.btnadd.ShadowDecoration.BorderRadius = 10
+        Me.btnadd.ShadowDecoration.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnadd.Size = New System.Drawing.Size(176, 35)
+        Me.btnadd.TabIndex = 31
+        Me.btnadd.Text = "Add New Patient"
+        '
         'pnl_records
         '
+        Me.pnl_records.BackColor = System.Drawing.Color.Green
+        Me.pnl_records.Controls.Add(Me.txtsearch)
         Me.pnl_records.Controls.Add(Me.dgv_records)
         Me.pnl_records.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnl_records.Enabled = False
@@ -411,64 +466,102 @@ Partial Class frmmain
         Me.pnl_records.TabIndex = 29
         Me.pnl_records.Visible = False
         '
+        'txtsearch
+        '
+        Me.txtsearch.Animated = True
+        Me.txtsearch.AutoRoundedCorners = True
+        Me.txtsearch.BackColor = System.Drawing.Color.Transparent
+        Me.txtsearch.BorderColor = System.Drawing.Color.WhiteSmoke
+        Me.txtsearch.BorderRadius = 12
+        Me.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtsearch.DefaultText = ""
+        Me.txtsearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtsearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtsearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtsearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtsearch.Enabled = False
+        Me.txtsearch.FillColor = System.Drawing.Color.WhiteSmoke
+        Me.txtsearch.FocusedState.BorderColor = System.Drawing.Color.White
+        Me.txtsearch.Font = New System.Drawing.Font("Segoe UI", 9.2!)
+        Me.txtsearch.ForeColor = System.Drawing.Color.Black
+        Me.txtsearch.HoverState.BorderColor = System.Drawing.Color.WhiteSmoke
+        Me.txtsearch.IconLeft = Global.Birthing_Clinic_Patient_Records_System.My.Resources.Resources.magnifier
+        Me.txtsearch.IconLeftOffset = New System.Drawing.Point(5, 0)
+        Me.txtsearch.IconLeftSize = New System.Drawing.Size(18, 18)
+        Me.txtsearch.IconRightSize = New System.Drawing.Size(18, 18)
+        Me.txtsearch.Location = New System.Drawing.Point(516, 5)
+        Me.txtsearch.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtsearch.Name = "txtsearch"
+        Me.txtsearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtsearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.txtsearch.PlaceholderText = "Search"
+        Me.txtsearch.SelectedText = ""
+        Me.txtsearch.ShadowDecoration.BorderRadius = 5
+        Me.txtsearch.ShadowDecoration.Color = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.txtsearch.ShadowDecoration.Enabled = True
+        Me.txtsearch.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
+        Me.txtsearch.Size = New System.Drawing.Size(149, 26)
+        Me.txtsearch.TabIndex = 33
+        Me.txtsearch.TextOffset = New System.Drawing.Point(5, 0)
+        Me.txtsearch.Visible = False
+        '
         'dgv_records
         '
         Me.dgv_records.AllowUserToAddRows = False
         Me.dgv_records.AllowUserToDeleteRows = False
         Me.dgv_records.AllowUserToResizeColumns = False
         Me.dgv_records.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_records.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_records.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgv_records.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
-        Me.dgv_records.BackgroundColor = System.Drawing.Color.DarkGreen
-        Me.dgv_records.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgv_records.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGreen
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_records.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgv_records.BackgroundColor = System.Drawing.Color.Green
+        Me.dgv_records.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkGreen
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGreen
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_records.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgv_records.ColumnHeadersHeight = 30
         Me.dgv_records.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_records.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_records.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgv_records.GridColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.dgv_records.Location = New System.Drawing.Point(3, 2)
+        Me.dgv_records.Location = New System.Drawing.Point(0, 35)
         Me.dgv_records.Name = "dgv_records"
         Me.dgv_records.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Green
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_records.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.Green
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_records.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgv_records.RowHeadersVisible = False
         Me.dgv_records.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Green
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_records.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.Green
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_records.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgv_records.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Green
         Me.dgv_records.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgv_records.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -476,7 +569,8 @@ Partial Class frmmain
         Me.dgv_records.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White
         Me.dgv_records.RowTemplate.ReadOnly = True
         Me.dgv_records.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_records.Size = New System.Drawing.Size(670, 426)
+        Me.dgv_records.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.dgv_records.Size = New System.Drawing.Size(673, 395)
         Me.dgv_records.TabIndex = 2
         Me.dgv_records.TabStop = False
         Me.dgv_records.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -484,10 +578,10 @@ Partial Class frmmain
         Me.dgv_records.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.dgv_records.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgv_records.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.dgv_records.ThemeStyle.BackColor = System.Drawing.Color.DarkGreen
+        Me.dgv_records.ThemeStyle.BackColor = System.Drawing.Color.Green
         Me.dgv_records.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.dgv_records.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgv_records.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
+        Me.dgv_records.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dgv_records.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgv_records.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.dgv_records.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
@@ -528,32 +622,6 @@ Partial Class frmmain
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
         Me.Column4.Width = 167
-        '
-        'btnslidepanel
-        '
-        Me.btnslidepanel.Animated = True
-        Me.btnslidepanel.BackColor = System.Drawing.Color.Transparent
-        Me.btnslidepanel.BorderColor = System.Drawing.Color.DarkGreen
-        Me.btnslidepanel.BorderRadius = 10
-        Me.btnslidepanel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnslidepanel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnslidepanel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnslidepanel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnslidepanel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnslidepanel.FillColor = System.Drawing.Color.DarkGreen
-        Me.btnslidepanel.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnslidepanel.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnslidepanel.HoverState.FillColor = System.Drawing.Color.DarkGreen
-        Me.btnslidepanel.Image = Global.Birthing_Clinic_Patient_Records_System.My.Resources.Resources.iconslidehide
-        Me.btnslidepanel.ImageOffset = New System.Drawing.Point(7, 0)
-        Me.btnslidepanel.ImageSize = New System.Drawing.Size(15, 15)
-        Me.btnslidepanel.Location = New System.Drawing.Point(-31, 1)
-        Me.btnslidepanel.Name = "btnslidepanel"
-        Me.btnslidepanel.ShadowDecoration.BorderRadius = 10
-        Me.btnslidepanel.ShadowDecoration.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnslidepanel.ShadowDecoration.Enabled = True
-        Me.btnslidepanel.Size = New System.Drawing.Size(51, 35)
-        Me.btnslidepanel.TabIndex = 21
         '
         'pnl_home
         '
@@ -722,4 +790,6 @@ Partial Class frmmain
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents btnadd As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtsearch As Guna.UI2.WinForms.Guna2TextBox
 End Class

@@ -127,6 +127,11 @@ Birthing Clinic Patient Records System
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Birthing_Clinic_Patient_Records_System.My.Resources.Resources.magnifier">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Birthing_Clinic_Patient_Records_System.My.Resources.Resources.yellowgreen_picture">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

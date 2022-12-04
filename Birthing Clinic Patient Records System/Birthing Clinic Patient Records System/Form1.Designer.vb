@@ -66,7 +66,7 @@ Partial Class frmlogin
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Guna2AnimateWindow1 = New Guna.UI2.WinForms.Guna2AnimateWindow(Me.components)
+        Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.pnl_border.SuspendLayout()
         Me.pnl_navbutton.SuspendLayout()
         CType(Me.pblogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -845,11 +845,15 @@ Partial Class frmlogin
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "About"
         '
-        'Guna2AnimateWindow1
+        'Guna2BorderlessForm1
         '
-        Me.Guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND
-        Me.Guna2AnimateWindow1.Interval = 300
-        Me.Guna2AnimateWindow1.TargetForm = Me
+        Me.Guna2BorderlessForm1.AnimateWindow = True
+        Me.Guna2BorderlessForm1.ContainerControl = Me
+        Me.Guna2BorderlessForm1.DockForm = False
+        Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2BorderlessForm1.DragForm = False
+        Me.Guna2BorderlessForm1.ShadowColor = System.Drawing.Color.DarkGreen
+        Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
         'frmlogin
         '
@@ -951,5 +955,5 @@ Partial Class frmlogin
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lblwarning As Label
-    Friend WithEvents Guna2AnimateWindow1 As Guna.UI2.WinForms.Guna2AnimateWindow
+    Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
 End Class
