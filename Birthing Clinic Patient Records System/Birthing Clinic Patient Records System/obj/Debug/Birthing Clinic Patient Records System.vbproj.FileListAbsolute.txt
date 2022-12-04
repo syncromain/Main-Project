@@ -67,3 +67,4 @@ C:\Users\jolly\Downloads\Main-Project\Birthing Clinic Patient Records System\Bir
 C:\Users\jolly\Downloads\Main-Project\Birthing Clinic Patient Records System\Birthing Clinic Patient Records System\obj\Debug\Birthing Clinic Patient Records System.xml
 C:\Users\jolly\Downloads\Main-Project\Birthing Clinic Patient Records System\Birthing Clinic Patient Records System\obj\Debug\Birthing Clinic Patient Records System.pdb
 C:\Users\jolly\Downloads\Main-Project\Birthing Clinic Patient Records System\Birthing Clinic Patient Records System\obj\Debug\Birthing_Clinic_Patient_Records_System.frmaddpatient.resources
+C:\Users\jolly\Downloads\Main-Project\Birthing Clinic Patient Records System\Birthing Clinic Patient Records System\obj\Debug\Birthing_Clinic_Patient_Records_System.frm_editing.resources
