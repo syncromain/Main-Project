@@ -7,6 +7,7 @@ Public Class frmmain
     Dim newFont2 As New Font("Segoe UI", 9.2)
     Dim hided = False
     Dim pop As Boolean
+    Public selected As String
 
     Private Property MoveForm As Boolean
 
@@ -271,5 +272,22 @@ Public Class frmmain
             search()
             pop = True
         End If
+    End Sub
+
+    Private Sub dgv_records_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_records.CellContentClick
+        selected = (dgv_records.Rows(e.RowIndex).Cells(0).Value).ToString
+
+        If IsDBNull(selected) Then
+        Else
+            frm_editing.ShowDialog(Me)
+        End If
+    End Sub
+
+    Private Sub btnnotifi_Click(sender As Object, e As EventArgs) Handles btnnotifi.Click
+
+    End Sub
+
+    Private Sub Guna2DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Guna2DataGridView1.CellContentClick
+
     End Sub
 End Class
